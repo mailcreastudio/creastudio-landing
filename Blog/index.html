@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Creative Strategy & Meta Ads | Créastudio</title>
+    <meta name="description" content="Découvrez nos conseils d'experts, méthodes et études de cas pour réduire votre CPL et scaler vos campagnes publicitaires Meta Ads.">
+    <link rel="canonical" href="https://creastudio-4.vercel.app/blog/">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0A0A0A',
+                        darkCard: '#121212',
+                        darkBorder: '#222222',
+                        accentOrange: '#ff6100',
+                        accentRed: '#c60909',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glow-orange {
+            box-shadow: 0 0 40px -10px rgba(255, 97, 0, 0.3);
+        }
+        .glow-red {
+            box-shadow: 0 0 40px -10px rgba(198, 9, 9, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-dark text-gray-100 font-sans antialiased selection:bg-accentOrange selection:text-white">
+
+    <!-- 1. Header Sticky Minimaliste -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-md border-b border-darkBorder transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3.5 group">
+                <img src="../logo.png" alt="Créastudio Logo" class="h-14 w-auto object-contain group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/60x60/ff6100/ffffff?text=C'">
+                <span class="font-montserrat font-extrabold text-2xl tracking-tight text-white">CRÉASTUDIO<span class="text-accentOrange">.</span></span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="../index.html#manifeste" class="hover:text-accentOrange transition-colors">Manifeste</a>
+                <a href="../index.html#methodologie" class="hover:text-accentOrange transition-colors">Méthode</a>
+                <a href="../index.html#cas" class="hover:text-accentOrange transition-colors">Résultats</a>
+                <a href="../index.html#tarifs" class="hover:text-accentOrange transition-colors">Tarifs</a>
+                <a href="index.html" class="text-accentOrange font-semibold flex items-center gap-1.5"><i class="fa-solid fa-pen-nib text-xs"></i> Blog</a>
+                <a href="../index.html#faq" class="hover:text-accentOrange transition-colors">FAQ</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="../index.html#contact" class="hidden sm:inline-flex items-center justify-center px-6 py-3 rounded-full bg-accentRed hover:bg-red-700 text-white font-bold text-sm tracking-wide transition-all shadow-lg hover:shadow-red-900/50 transform hover:-translate-y-0.5">
+                    Réserver un Audit
+                </a>
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none text-2xl p-2">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-darkCard border-b border-darkBorder px-6 py-6 space-y-4">
+            <a href="../index.html#manifeste" class="block text-gray-300 hover:text-accentOrange font-medium">Manifeste</a>
+            <a href="../index.html#methodologie" class="block text-gray-300 hover:text-accentOrange font-medium">Méthode</a>
+            <a href="../index.html#cas" class="block text-gray-300 hover:text-accentOrange font-medium">Résultats</a>
+            <a href="../index.html#tarifs" class="block text-gray-300 hover:text-accentOrange font-medium">Tarifs</a>
+            <a href="index.html" class="block text-accentOrange font-semibold flex items-center gap-2"><i class="fa-solid fa-pen-nib"></i> Blog</a>
+            <a href="../index.html#faq" class="block text-gray-300 hover:text-accentOrange font-medium">FAQ</a>
+            <a href="../index.html#contact" class="block text-center w-full py-3 rounded-full bg-accentRed text-white font-bold">Réserver un Audit</a>
+        </div>
+    </header>
+
+    <!-- 2. Hero Blog -->
+    <section class="pt-36 pb-16 text-center relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accentOrange/10 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-6 relative z-10 reveal">
+            <span class="text-accentOrange font-semibold text-sm uppercase tracking-widest block mb-3">Ressources & Expertise</span>
+            <h1 class="font-montserrat font-black text-4xl sm:text-6xl text-white tracking-tight mb-6">
+                Le Blog Creative Strategy.
+            </h1>
+            <p class="text-gray-400 text-lg font-light max-w-2xl mx-auto">
+                Tout ce que les Media Buyers doivent savoir pour dominer l'algorithme de Meta Ads, réduire leur CPL et éliminer l'ad-fatigue.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. Liste des Articles (Structure rigoureusement identique aux Études de Cas) -->
+    <section class="pb-28">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="space-y-6 reveal">
+
+                <!-- Article 1 -->
+                <div class="bg-dark border border-darkBorder p-6 sm:p-8 rounded-3xl relative overflow-hidden transition-all duration-300 hover:border-accentOrange/50 shadow-xl">
+                    <div class="grid lg:grid-cols-12 gap-8 items-center">
+                        
+                        <!-- Colonne Gauche : Visuel format portrait identique aux études de cas -->
+                        <div class="lg:col-span-4 flex flex-col items-center">
+                            <a href="articles/reduire-cpl-meta-ads.html" class="relative w-full max-w-[200px] rounded-2xl p-2 bg-gradient-to-b from-accentOrange/20 via-darkCard to-dark border border-accentOrange/40 shadow-lg group block">
+                                <div class="absolute -top-2.5 left-3 bg-accentOrange text-dark font-black text-[9px] px-2 py-0.5 rounded-full uppercase tracking-wider shadow z-10">
+                                    Article SEO
+                                </div>
+                                <div class="rounded-xl overflow-hidden border border-darkBorder bg-dark mt-1">
+                                    <img src="../logo.png" alt="Visuel article" class="w-full h-auto object-cover opacity-90 group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/250x300/121212/ff6100?text=Meta+Ads'">
+                                </div>
+                            </a>
+                            <span class="text-[11px] text-gray-500 mt-2 font-medium">5 min de lecture</span>
+                        </div>
+
+                        <!-- Colonne Droite : Infos, Titre & Description -->
+                        <div class="lg:col-span-8 space-y-4">
+                            <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-darkBorder">
+                                <div>
+                                    <span class="text-xs text-accentOrange font-semibold uppercase tracking-wider">Meta Ads & CPL</span>
+                                    <h2 class="font-montserrat font-bold text-xl text-white mt-1">
+                                        <a href="articles/reduire-cpl-meta-ads.html" class="hover:text-accentOrange transition-colors">
+                                            Comment réduire son CPL sur Meta Ads grâce à la Creative Strategy.
+                                        </a>
+                                    </h2>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[10px] text-gray-500 uppercase tracking-widest block">Date</span>
+                                    <span class="font-montserrat font-bold text-sm text-gray-300">18 Nov</span>
+                                </div>
+                            </div>
+
+                            <p class="text-gray-300 text-sm leading-relaxed font-light">
+                                Découvrez comment l'ingénierie créative et l'analyse psychologique permettent de combattre l'ad-fatigue et de diviser par deux votre coût par lead sur Meta Ads.
+                            </p>
+
+                            <div class="pt-2">
+                                <a href="articles/reduire-cpl-meta-ads.html" class="inline-flex items-center gap-2 text-white font-bold text-sm hover:text-accentOrange transition-colors">
+                                    Lire l'article complet <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Article 2 (Optimiser ses créatives pour booster son ROAS) -->
+                <div class="bg-dark border border-darkBorder p-6 sm:p-8 rounded-3xl relative overflow-hidden transition-all duration-300 hover:border-accentOrange/50 shadow-xl">
+                    <div class="grid lg:grid-cols-12 gap-8 items-center">
+                        
+                        <!-- Colonne Gauche : Visuel format portrait -->
+                        <div class="lg:col-span-4 flex flex-col items-center">
+                            <a href="../articles/optimiser-creatives-meta-ads-roas.html" class="relative w-full max-w-[200px] rounded-2xl p-2 bg-gradient-to-b from-accentOrange/20 via-darkCard to-dark border border-accentOrange/40 shadow-lg group block">
+                                <div class="absolute -top-2.5 left-3 bg-accentOrange text-dark font-black text-[9px] px-2 py-0.5 rounded-full uppercase tracking-wider shadow z-10">
+                                    Performance
+                                </div>
+                                <div class="rounded-xl overflow-hidden border border-darkBorder bg-dark mt-1">
+                                    <img src="../articles/optimiser-creatives-meta-ads-roas.jpg" alt="Visuel article ROAS" class="w-full h-auto object-cover opacity-90 group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/250x300/121212/ff6100?text=Booster+ROAS'">
+                                </div>
+                            </a>
+                            <span class="text-[11px] text-gray-500 mt-2 font-medium">6 min de lecture</span>
+                        </div>
+
+                        <!-- Colonne Droite : Infos, Titre & Description -->
+                        <div class="lg:col-span-8 space-y-4">
+                            <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-darkBorder">
+                                <div>
+                                    <span class="text-xs text-accentOrange font-semibold uppercase tracking-wider">ROAS & Créatives</span>
+                                    <h2 class="font-montserrat font-bold text-xl text-white mt-1">
+                                        <a href="../articles/optimiser-creatives-meta-ads-roas.html" class="hover:text-accentOrange transition-colors">
+                                            Publicité Meta Ads : optimiser ses créatives pour booster son ROAS.
+                                        </a>
+                                    </h2>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[10px] text-gray-500 uppercase tracking-widest block">Date</span>
+                                    <span class="font-montserrat font-bold text-sm text-gray-300">18 Nov</span>
+                                </div>
+                            </div>
+
+                            <p class="text-gray-300 text-sm leading-relaxed font-light">
+                                Les méthodes concrètes pour structurer vos hooks visuels, tester vos angles marketing et maximiser la rentabilité de vos campagnes publicitaires.
+                            </p>
+
+                            <div class="pt-2">
+                                <a href="../articles/optimiser-creatives-meta-ads-roas.html" class="inline-flex items-center gap-2 text-white font-bold text-sm hover:text-accentOrange transition-colors">
+                                    Lire l'article complet <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Footer Style Agence d'Élite -->
+    <footer class="bg-dark border-t border-darkBorder pt-20 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16 border-b border-darkBorder">
+                
+                <!-- Colonne 1 : Logo & Présentation -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3.5">
+                        <img src="../logo.png" alt="Créastudio Logo" class="h-10 w-auto object-contain" onerror="this.src='https://placehold.co/40x40/ff6100/ffffff?text=C'">
+                        <span class="font-montserrat font-extrabold text-xl tracking-tight text-white">CRÉASTUDIO<span class="text-accentOrange">.</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm font-light max-w-sm leading-relaxed">
+                        Studio d'ingénierie publicitaire et de Creative Strategy ultra-spécialisé dans la conception de visuels Meta Ads à haute performance pour la génération de prospects.
+                    </p>
+                    <div class="pt-2 flex items-center gap-4">
+                        <a href="mailto:mail.creastudio@gmail.com" title="Envoyer un email" class="w-10 h-10 rounded-full bg-darkCard border border-darkBorder flex items-center justify-center text-gray-300 hover:text-accentOrange hover:border-accentOrange transition-colors">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/j%C3%A9r%C3%A9my-sautron-3428b4269/" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="w-10 h-10 rounded-full bg-darkCard border border-darkBorder flex items-center justify-center text-gray-300 hover:text-accentOrange hover:border-accentOrange transition-colors">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61560014023079" target="_blank" rel="noopener noreferrer" title="Facebook" class="w-10 h-10 rounded-full bg-darkCard border border-darkBorder flex items-center justify-center text-gray-300 hover:text-accentOrange hover:border-accentOrange transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Colonne 2 : Navigation Rapide -->
+                <div class="space-y-4">
+                    <h4 class="font-montserrat font-bold text-white text-sm uppercase tracking-wider">Navigation</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400 font-light">
+                        <li><a href="../index.html#manifeste" class="hover:text-accentOrange transition-colors">Manifeste</a></li>
+                        <li><a href="../index.html#methodologie" class="hover:text-accentOrange transition-colors">Méthode</a></li>
+                        <li><a href="../index.html#cas" class="hover:text-accentOrange transition-colors">Résultats</a></li>
+                        <li><a href="../index.html#tarifs" class="hover:text-accentOrange transition-colors">Tarifs</a></li>
+                        <li><a href="index.html" class="hover:text-accentOrange transition-colors">Blog SEO</a></li>
+                        <li><a href="../index.html#faq" class="hover:text-accentOrange transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 3 : Contact & Legal -->
+                <div class="space-y-4">
+                    <h4 class="font-montserrat font-bold text-white text-sm uppercase tracking-wider">Informations</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400 font-light">
+                        <li><a href="../index.html#contact" class="hover:text-accentOrange transition-colors font-medium text-white">Réserver un Audit</a></li>
+                        <li><a href="mailto:mail.creastudio@gmail.com" class="hover:text-accentOrange transition-colors">mail.creastudio@gmail.com</a></li>
+                        <li><a href="#" class="hover:text-accentOrange transition-colors">Mentions Légales</a></li>
+                        <li><a href="#" class="hover:text-accentOrange transition-colors">Politique de Confidentialité</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bas du footer -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 font-light">
+                <p>&copy; 2026 Créastudio. Tous droits réservés.</p>
+                <p>Conçu pour les Media Buyers & Agences exigeantes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
