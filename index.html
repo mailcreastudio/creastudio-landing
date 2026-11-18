@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créastudio - Studio d'Ingénierie Publicitaire & Creative Strategy Meta Ads</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Montserrat & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0A0A0A',
+                        darkCard: '#121212',
+                        darkBorder: '#222222',
+                        accentOrange: '#ff6100',
+                        accentRed: '#c60909',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .glow-orange {
+            box-shadow: 0 0 40px -10px rgba(255, 97, 0, 0.3);
+        }
+        .glow-red {
+            box-shadow: 0 0 40px -10px rgba(198, 9, 9, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-dark text-gray-100 font-sans antialiased selection:bg-accentOrange selection:text-white">
+
+    <!-- 1. Header Sticky Minimaliste -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-md border-b border-darkBorder transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <!-- Logo avec l'image fournie et taille optimisée -->
+            <a href="#" class="flex items-center gap-3.5 group">
+                <img src="logo.png" alt="Créastudio Logo" class="h-14 w-auto object-contain group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/60x60/ff6100/ffffff?text=C'">
+                <span class="font-montserrat font-extrabold text-2xl tracking-tight text-white">CRÉASTUDIO<span class="text-accentOrange">.</span></span>
+            </a>
+
+            <!-- Navigation Desktop -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#manifeste" class="hover:text-accentOrange transition-colors">Manifeste</a>
+                <a href="#methodologie" class="hover:text-accentOrange transition-colors">Méthode</a>
+                <a href="#cas" class="hover:text-accentOrange transition-colors">Résultats</a>
+                <a href="#tarifs" class="hover:text-accentOrange transition-colors">Tarifs</a>
+                <a href="#faq" class="hover:text-accentOrange transition-colors">FAQ</a>
+            </nav>
+
+            <!-- CTA Header -->
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-6 py-3 rounded-full bg-accentRed hover:bg-red-700 text-white font-bold text-sm tracking-wide transition-all shadow-lg hover:shadow-red-900/50 transform hover:-translate-y-0.5">
+                    Réserver un Audit
+                </a>
+                <!-- Mobile menu button -->
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none text-2xl p-2">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darkCard border-b border-darkBorder px-6 py-6 space-y-4">
+            <a href="#manifeste" class="block text-gray-300 hover:text-accentOrange font-medium">Manifeste</a>
+            <a href="#methodologie" class="block text-gray-300 hover:text-accentOrange font-medium">Méthode</a>
+            <a href="#cas" class="block text-gray-300 hover:text-accentOrange font-medium">Résultats</a>
+            <a href="#tarifs" class="block text-gray-300 hover:text-accentOrange font-medium">Tarifs</a>
+            <a href="#faq" class="block text-gray-300 hover:text-accentOrange font-medium">FAQ</a>
+            <a href="#contact" class="block text-center w-full py-3 rounded-full bg-accentRed text-white font-bold">Réserver un Audit</a>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section Percutante -->
+    <section class="relative pt-36 pb-24 md:pt-48 md:pb-36 overflow-hidden">
+        <!-- Fond lumineux décoratif -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accentOrange/10 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-accentRed/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
+            <!-- Badge de positionnement -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-darkCard border border-darkBorder mb-8 reveal">
+                <span class="w-2.5 h-2.5 rounded-full bg-accentOrange animate-pulse"></span>
+                <span class="text-xs font-semibold tracking-wider uppercase text-gray-300">Studio d'Ingénierie Publicitaire & Creative Strategy</span>
+            </div>
+
+            <!-- Titre H1 Massif -->
+            <h1 class="font-montserrat font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.1] mb-8 reveal">
+                Vos visuels Meta Ads s'essoufflent ? <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accentOrange via-orange-400 to-accentRed">Réduisez votre CPL </span> par l'ingénierie créative.
+            </h1>
+
+            <!-- Sous-titre -->
+            <p class="max-w-3xl mx-auto text-lg sm:text-xl text-gray-400 font-light leading-relaxed mb-12 reveal">
+                Media Buyers et agences : Nous isolons scientifiquement les déclencheurs psychologiques de votre offre pour concevoir des créas publicitaires qui cassent le scroll et convertissent sans friction.
+            </p>
+
+            <!-- CTA direct -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-5 reveal">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-full bg-accentRed hover:bg-red-700 text-white font-bold text-base tracking-wide transition-all shadow-xl hover:shadow-red-600/30 transform hover:-translate-y-1 glow-red text-center">
+                    Candidater pour une Session Stratégique <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#cas" class="w-full sm:w-auto px-8 py-4 rounded-full bg-darkCard hover:bg-darkBorder border border-darkBorder text-gray-200 font-semibold text-base transition-all text-center">
+                    Voir nos études de cas <i class="fa-solid fa-chart-line ml-2 text-accentOrange"></i>
+                </a>
+            </div>
+
+            <!-- Preuve en chiffres rapide -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-16 border-t border-darkBorder reveal">
+                <div class="text-center">
+                    <p class="font-montserrat font-black text-3xl sm:text-4xl text-white mb-1">+40</p>
+                    <p class="text-xs text-gray-500 uppercase tracking-wider font-medium">Clients Traités</p>
+                </div>
+                <div class="text-center">
+                    <p class="font-montserrat font-black text-3xl sm:text-4xl text-accentRed mb-1">100%</p>
+                    <p class="text-xs text-gray-500 uppercase tracking-wider font-medium">Dédiées Lead Gen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Le Manifeste / Problème -->
+    <section id="manifeste" class="py-24 bg-darkCard/50 border-y border-darkBorder relative">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <span class="text-accentOrange font-semibold text-sm uppercase tracking-widest block mb-3">Le Manifeste Créastudio</span>
+                    <h2 class="font-montserrat font-bold text-3xl sm:text-4xl text-white leading-tight mb-6">
+                        Le "Creative Fatigue" est le tueur silencieux de vos campagnes Meta Ads.
+                    </h2>
+                    <p class="text-gray-400 font-light leading-relaxed mb-6">
+                        Vous le savez mieux que quiconque : ajuster les audiences ou augmenter les budgets ne suffit plus. Aujourd'hui, 80% de la performance publicitaire repose sur la créa. Pourtant, la plupart des agences produisent des visuels simples, espérant qu'un design "joli" fonctionne.
+                    </p>
+                    <p class="text-gray-400 font-light leading-relaxed">
+                        Chez <strong class="text-white font-semibold">Créastudio</strong>, nous refusons le design superficiel. En tant que Creative Strategists, nous analysons les biais cognitifs, les frictions d'achat et les déclencheurs d'urgence propres à votre cible pour concevoir des assets publicitaires chirurgicaux.
+                    </p>
+                </div>
+
+                <div class="bg-dark border border-darkBorder p-8 rounded-2xl relative reveal glow-orange">
+                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-accentOrange rounded-xl flex items-center justify-center text-dark font-black text-xl shadow-lg">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-xl text-white mb-6">Le Constat du Media Buyer moderne :</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-accentRed mt-1 text-lg"></i>
+                            <span class="text-gray-300 text-sm">Hausse continue du CPL due à la saturation des feeds sur Meta.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-accentRed mt-1 text-lg"></i>
+                            <span class="text-gray-300 text-sm">Manque de vélocité dans la production de variations itératives.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-accentRed mt-1 text-lg"></i>
+                            <span class="text-gray-300 text-sm">Visuels esthétiques mais dénués de psychologie de conversion.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-accentOrange mt-1 text-lg"></i>
+                            <span class="text-white font-medium text-sm"><strong>La Solution Créastudio :</strong> Ingénierie créative axée data et performance.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. La Méthodologie en 3 étapes -->
+    <section id="methodologie" class="py-28 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+                <span class="text-accentOrange font-semibold text-sm uppercase tracking-widest block mb-3">Processus Scientifique</span>
+                <h2 class="font-montserrat font-bold text-3xl sm:text-5xl text-white tracking-tight mb-6">
+                    Une méthodologie en 3 étapes taillée pour le scale.
+                </h2>
+                <p class="text-gray-400 font-light text-lg">
+                    De la recherche psychologique à la livraison des formats prêts à diffuser.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Étape 1 -->
+                <div class="bg-darkCard border border-darkBorder p-8 rounded-2xl relative reveal group hover:border-accentOrange transition-colors">
+                    <div class="text-accentOrange font-montserrat font-black text-6xl mb-6 opacity-30 group-hover:opacity-100 transition-opacity">01</div>
+                    <h3 class="font-montserrat font-bold text-2xl text-white mb-4">Analyse Psychologique</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed font-light">
+                        Audit approfondi de votre offre, de vos angles morts et de vos concurrents. Nous identifions les leviers émotionnels et rationnels qui déclenchent l'action chez vos prospects cibles.
+                    </p>
+                </div>
+
+                <!-- Étape 2 -->
+                <div class="bg-darkCard border border-darkBorder p-8 rounded-2xl relative reveal group hover:border-accentOrange transition-colors">
+                    <div class="text-accentOrange font-montserrat font-black text-6xl mb-6 opacity-30 group-hover:opacity-100 transition-opacity">02</div>
+                    <h3 class="font-montserrat font-bold text-2xl text-white mb-4">Ingénierie<br> & Concepts</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed font-light">
+                        Rédaction des accroches publicitaires, conception de l'architecture graphique orientée taux de clic (CTR) maximal.
+                    </p>
+                </div>
+
+                <!-- Étape 3 -->
+                <div class="bg-darkCard border border-darkBorder p-8 rounded-2xl relative reveal group hover:border-accentOrange transition-colors">
+                    <div class="text-accentOrange font-montserrat font-black text-6xl mb-6 opacity-30 group-hover:opacity-100 transition-opacity">03</div>
+                    <h3 class="font-montserrat font-bold text-2xl text-white mb-4">Livraison & Formats 4/5 & 9/16</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed font-light">
+                        Production finale optimisée aux formats Meta (4/5 et 9/16). Fichiers prêts à l'emploi, traités sous plusieurs angles créatifs, pensés pour résister à la fatigue publicitaire.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Preuve & Étude de cas -->
+    <section id="cas" class="py-24 bg-darkCard/50 border-y border-darkBorder">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-accentOrange font-semibold text-sm uppercase tracking-widest block mb-3">Étude de Cas Vérifiée</span>
+                <h2 class="font-montserrat font-bold text-3xl sm:text-4xl text-white tracking-tight mb-4">
+                    Comment nous avons généré 50 leads qualifiés en 48h pour un client B2B.
+                </h2>
+                <p class="text-gray-400 text-sm">Partenaire Agence Raven Agency - Campagne Meta Ads Lead Generation</p>
+            </div>
+
+            <div class="bg-dark border border-darkBorder p-8 sm:p-12 rounded-3xl reveal relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-accentRed text-white text-xs font-bold px-4 py-2 rounded-bl-xl uppercase tracking-wider">
+                    Résultat Certifié
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12 pb-12 border-b border-darkBorder items-center">
+                    <div class="text-center md:text-left">
+                        <span class="text-xs text-gray-500 uppercase tracking-widest block mb-1">durée du test</span>
+                        <span class="font-montserrat font-black text-3xl text-gray-400">48h</span>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-xs text-accentOrange uppercase tracking-widest block mb-1">CPL</span>
+                        <span class="font-montserrat font-black text-4xl text-accentOrange">6.50€</span>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <span class="text-xs text-gray-500 uppercase tracking-widest block mb-1">Volume Leads</span>
+                        <span class="font-montserrat font-black text-3xl text-white">52 Leads</span>
+                    </div>
+                </div>
+		 <!-- Visuel BASE intégré avec animation et effet de zoom au survol -->
+                <div class="mb-10 overflow-hidden rounded-2xl border border-darkBorder bg-darkCard relative group/img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent opacity-60 z-10 pointer-events-none"></div>
+                    <img src="BASE.png" alt="Visuel étude de cas Créastudio" class="w-full h-auto object-cover transform group-hover/img:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/900x500/121212/ff6100?text=Visuel+Publicitaire+BASE+Creastudio'">
+                    <div class="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
+                        <span class="px-3 py-1.5 rounded-lg bg-dark/90 backdrop-blur-md border border-darkBorder text-xs text-gray-300 font-medium">
+                            <i class="fa-solid fa-layer-group text-accentOrange mr-2"></i> Variations publicitaires 4/5 & 9/16
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-accentOrange/90 text-dark text-xs font-bold">
+                            Top Performeur
+                        </span>
+                    </div>
+                </div>
+
+                <blockquote class="text-gray-300 italic text-base sm:text-lg leading-relaxed mb-6 font-light">
+                    "En étroite collaboration avec CréaStudio, depuis bientôt 4ans, l'agence est en perpétuelle évolution pour toujours fournir des créas de meilleurs qualité tout en respectant les objectifs fixés…
+C'est devenu avec le temps bien plus qu'un prestataire mais un véritable partenaire dans l'atteinte de mes objectifs.
+La souplesse dans les échanges permet une très grande réactivité tant sur la communication que sur les réalisations.
+Je ne peux que recommander CréaStudio."
+                </blockquote>
+
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-accentOrange/20 border border-accentOrange flex items-center justify-center text-accentOrange font-bold text-lg">
+                        MC
+                    </div>
+                    <div>
+                        <p class="font-bold text-white text-sm">Mathieu C.</p>
+                        <p class="text-xs text-gray-400">Agence de marketing digital - Raven Agency</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Grille d'Offres & Tarifs transparente -->
+    <section id="tarifs" class="py-28 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+                <span class="text-accentOrange font-semibold text-sm uppercase tracking-widest block mb-3">Investissement Transparent</span>
+                <h2 class="font-montserrat font-bold text-3xl sm:text-5xl text-white tracking-tight mb-6">
+                    Des tarifs clairs, axés sur votre ROI publicitaire.
+                </h2>
+                <p class="text-gray-400 font-light text-lg">
+                    Choisissez la formule adaptée à votre vélocité de test sur Meta Ads.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Pack Découverte -->
+                <div class="bg-darkCard border border-darkBorder rounded-3xl p-8 sm:p-10 flex flex-col justify-between reveal">
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-gray-400 bg-dark px-3 py-1 rounded-full border border-darkBorder">Test & Validation</span>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-3xl text-white mb-2">Pack Découverte</h3>
+                        <p class="text-gray-400 text-sm mb-8 font-light">Idéal pour tester l'approche Créastudio sur une campagne ciblée ou un nouveau produit.</p>
+                        
+                        <div class="flex items-baseline gap-1 mb-8">
+                            <span class="font-montserrat font-black text-5xl text-white">200€</span>
+                            <span class="text-gray-400 text-sm">/ paiement unique</span>
+                        </div>
+
+                        <ul class="space-y-4 mb-10 text-sm text-gray-300">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accentOrange"></i>
+                                <span><strong>8 visuels Meta Ads</strong> haute performance</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accentOrange"></i>
+                                <span><strong>1 ligne de brief</strong> convertie en 4 visuels différents<br> pour combattre l'ad-fatigue</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accentOrange"></i>
+                                <span>Déclinés en 2 formats : 4/5 et 9/16</span>
+                            </li>
+
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accentOrange"></i>
+                                <span>Livraison sous 48h à 72h</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" onclick="selectPack('Pack Découverte (400€)')" class="w-full py-4 rounded-full bg-dark hover:bg-darkBorder border border-darkBorder text-white font-bold text-center transition-all">
+                        Sélectionner le Pack Découverte
+                    </a>
+                </div>
+
+                <!-- Pack Partenaire (Recommandé) -->
+                <div class="bg-darkCard border-2 border-accentOrange rounded-3xl p-8 sm:p-10 flex flex-col justify-between reveal relative glow-orange">
+                    <div class="absolute -top-4 right-8 bg-accentOrange text-dark font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                        Recommandé Agences
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-accentOrange bg-accentOrange/10 px-3 py-1 rounded-full">Scale & Performance</span>
+                        </div>
+                        <h3 class="font-montserrat font-bold text-3xl text-white mb-2">Pack Partenaire</h3>
+                        <p class="text-gray-400 text-sm mb-8 font-light">Conçu pour les Media Buyers et agences qui exigent un flux constant de nouvelles créas.</p>
+                        
+                        <div class="flex items-baseline gap-1 mb-8">
+                            <span class="font-montserrat font-black text-5xl text-white">800€</span>
+                            <span class="text-gray-400 text-sm">/ mois (Engagement 3 mois)</span>
+                        </div>
+
+                        <ul class="space-y-4 mb-10 text-sm text-gray-300">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accentOrange"></i>
+                                <span><strong>40 visuels/mois</strong> performance maximale</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accentOrange"></i>
+                                <span><strong>Briefs illimités</strong> pour traiter un flux de clients en simultané</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accentOrange"></i>
+                                <span>Stratégie de tests A/B</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-accentOrange"></i>
+                                <span>Déclinés en 2 formats : 4/5, 9/16 ou sur-mesure</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" onclick="selectPack('Pack Partenaire (800€/mois)')" class="w-full py-4 rounded-full bg-accentRed hover:bg-red-700 text-white font-bold text-center transition-all shadow-lg glow-red">
+                        Sélectionner le Pack Partenaire
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Section FAQ -->
+    <section id="faq" class="py-24 bg-darkCard/50 border-y border-darkBorder">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-accentOrange font-semibold text-sm uppercase tracking-widest block mb-3">Foire Aux Questions</span>
+                <h2 class="font-montserrat font-bold text-3xl sm:text-4xl text-white tracking-tight mb-4">
+                    Tout ce que vous devez savoir avant de démarrer.
+                </h2>
+            </div>
+
+            <div class="space-y-4 reveal">
+                <!-- FAQ 1 -->
+                <div class="bg-dark border border-darkBorder rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none">
+                        <span class="font-montserrat font-bold text-white text-base">Quels sont les délais de livraison pour les visuels ?</span>
+                        <i class="fa-solid fa-chevron-down text-accentOrange transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-gray-400 text-sm font-light leading-relaxed">
+                        Pour le Pack Découverte, les premiers visuels sont livrés entre 48h et 72h après réception de votre brief et de vos assets. Pour le Pack Partenaire, les livraisons se font de manière cadencée suivant un calendrier d'optimisation mensuel avec deadline.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-dark border border-darkBorder rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none">
+                        <span class="font-montserrat font-bold text-white text-base">Comment transmettons-nous nos briefs et éléments graphiques ?</span>
+                        <i class="fa-solid fa-chevron-down text-accentOrange transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-gray-400 text-sm font-light leading-relaxed">
+                       Pas de processus lourd ni de logiciels complexes à apprendre. Nous mettons en place dès le premier jour un espace de travail partagé sur-mesure (ou via votre propre outil si vous en utilisez déjà un). Vous y déposez vos briefs et vos assetsen quelques clics, et notre équipe s'occupe du reste.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-dark border border-darkBorder rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none">
+                        <span class="font-montserrat font-bold text-white text-base">Sommes-nous propriétaires de tous les formats livrés ?</span>
+                        <i class="fa-solid fa-chevron-down text-accentOrange transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-gray-400 text-sm font-light leading-relaxed">
+                        Absolument. Tous les visuels, fichiers sources et variations livrés par Créastudio vous appartiennent à 100%. Vous êtes libres de les diffuser, les modifier et les scaler sur tous vos comptes publicitaires Meta.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-dark border border-darkBorder rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none">
+                        <span class="font-montserrat font-bold text-white text-base">Travaillez-vous exclusivement avec des agences ou aussi avec des annonceurs directs ?</span>
+                        <i class="fa-solid fa-chevron-down text-accentOrange transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-gray-400 text-sm font-light leading-relaxed">
+                        Nous collaborons à la fois avec des agences media buying de premier plan (en marque blanche ou en partenaire direct) et avec des annonceurs e-commerce ou lead gen en interne qui dépensent un budget publicitaire significatif sur Meta.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+             <!-- 8. Formulaire de Contact CRO (Envoi invisible sans rechargement) -->
+<section id="contact" class="py-28 relative">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+            <span class="text-accentOrange font-semibold text-sm uppercase tracking-widest block mb-3">Passez à l'action</span>
+            <h2 class="font-montserrat font-bold text-3xl sm:text-5xl text-white tracking-tight mb-6">
+                Réservez votre session stratégique.
+            </h2>
+            <p class="text-gray-400 font-light text-lg">
+                Remplissez ce formulaire pour valider votre éligibilité avec notre équipe.
+            </p>
+        </div>
+
+        <div class="bg-darkCard border border-darkBorder rounded-3xl p-8 sm:p-12 reveal shadow-2xl relative">
+            <!-- Message de succès masqué par défaut -->
+            <div id="success-message" class="hidden text-center py-12 space-y-6">
+                <div class="w-20 h-20 bg-accentOrange/20 border-2 border-accentOrange rounded-full flex items-center justify-center text-accentOrange text-3xl mx-auto">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h3 class="font-montserrat font-bold text-3xl text-white">Demande reçue avec succès !</h3>
+                <p class="text-gray-400 max-w-md mx-auto text-sm">
+                    Un Creative Strategist de Créastudio va analyser votre profil et vous recontacter sur votre email professionnel.
+                </p>
+                <button onclick="resetForm()" class="px-8 py-3 rounded-full bg-dark hover:bg-darkBorder border border-darkBorder text-white text-sm font-semibold transition-all">
+                    Envoyer une autre demande
+                </button>
+            </div>
+
+            <!-- Formulaire -->
+            <form id="cro-form" onsubmit="handleAjaxSubmit(event)" class="space-y-6">
+                
+                <!-- Paramètres de configuration pour FormSubmit en AJAX -->
+                <input type="hidden" name="_subject" value="Nouvelle demande de prospect - Créastudio">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Votre Nom *</label>
+                        <input type="text" name="Nom" required placeholder="Jean Dupont" class="w-full bg-dark border border-darkBorder rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-accentOrange text-sm transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Email Professionnel *</label>
+                        <input type="email" name="Email" required placeholder="jean@votre-agence.com" class="w-full bg-dark border border-darkBorder rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-accentOrange text-sm transition-colors">
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Site Web ou URL Agence *</label>
+                        <input type="text" name="Site_Web" required placeholder="https://votre-site.com" class="w-full bg-dark border border-darkBorder rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-accentOrange text-sm transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Pack Souhaité *</label>
+                        <select id="pack-select" name="Pack_Souhaite" class="w-full bg-dark border border-darkBorder rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-accentOrange text-sm transition-colors">
+                            <option value="Pack Découverte (400€)">Pack Découverte (200€ - 4 visuels)</option>
+                            <option value="Pack Partenaire (800€/mois)">Pack Partenaire (800€/mois - 20 visuels)</option>
+                            <option value="Audit Personnalisé">Audit Personnalisé & Sur-mesure</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Budget Mensuel Meta Ads actuel *</label>
+                    <select name="Budget_Meta_Ads" class="w-full bg-dark border border-darkBorder rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-accentOrange text-sm transition-colors">
+                        <option value="5k-15k">0€ - 5 000€ / mois</option>
+                        <option value="15k-50k">5 000€ - 15 000€ / mois</option>
+                        <option value="50k+">15 000€+ / mois</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Décrivez votre principal défi publicitaire actuel</label>
+                    <textarea name="Defi_Publicitaire" rows="4" placeholder="Ex: CPL trop élevé sur nos campagnes lead gen..." class="w-full bg-dark border border-darkBorder rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-accentOrange text-sm transition-colors resize-none"></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn" class="w-full py-4 rounded-full bg-accentRed hover:bg-red-700 text-white font-bold text-base tracking-wide transition-all shadow-xl glow-red">
+                    Envoyer ma demande <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Script JavaScript dédié pour l'envoi AJAX -->
+<script>
+    function handleAjaxSubmit(event) {
+        event.preventDefault();
+        
+        const form = document.getElementById('cro-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const formData = new FormData(form);
+
+        // Effet visuel de chargement sur le bouton
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Envoi en cours...';
+
+        // Envoi invisible en arrière-plan vers FormSubmit
+        fetch("https://formsubmit.co/ajax/mail.creastudio@gmail.com", {
+            method: "POST",
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Succès : on masque le formulaire et on affiche le message de remerciement
+            form.classList.add('hidden');
+            document.getElementById('success-message').classList.remove('hidden');
+            form.reset();
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Envoyer ma demande <i class="fa-solid fa-arrow-right ml-2"></i>';
+        })
+        .catch(error => {
+            alert("Une erreur est survenue lors de l'envoi. Veuillez réessayer.");
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Envoyer ma demande <i class="fa-solid fa-arrow-right ml-2"></i>';
+        });
+    }
+
+    function resetForm() {
+        document.getElementById('success-message').classList.add('hidden');
+        document.getElementById('cro-form').classList.remove('hidden');
+    }
+</script>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Footer Sobre et Professionnel -->
+    <footer class="bg-dark border-t border-darkBorder py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3.5">
+                <img src="logo.png" alt="Créastudio Logo" class="h-10 w-auto object-contain" onerror="this.src='https://placehold.co/40x40/ff6100/ffffff?text=C'">
+                <span class="font-montserrat font-extrabold text-lg tracking-tight text-white">CRÉASTUDIO<span class="text-accentOrange">.</span></span>
+            </div>
+
+            <p class="text-xs text-gray-500 font-light text-center md:text-left">
+                &copy; 2026 Créastudio. Tous droits réservés. Studio d'ingénierie publicitaire & Creative Strategy Meta Ads.
+            </p>
+
+            <div class="flex items-center gap-6 text-sm text-gray-400">
+                <a href="#" class="hover:text-accentOrange transition-colors">Mentions Légales</a>
+                <a href="#" class="hover:text-accentOrange transition-colors">Confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script>
+        // Menu Mobile Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Intersection Observer pour les animations reveal au défilement
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Fonction pour basculer la FAQ
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Sélection automatique du pack dans le formulaire
+        function selectPack(packName) {
+            const select = document.getElementById('pack-select');
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].value.includes(packName.split(' ')[0])) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        // Gestion de la soumission du formulaire CRO
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            document.getElementById('cro-form').classList.add('hidden');
+            document.getElementById('success-message').classList.remove('hidden');
+        }
+
+        // Réinitialisation du formulaire
+        function resetForm() {
+            document.getElementById('success-message').classList.add('hidden');
+            document.getElementById('cro-form').reset();
+            document.getElementById('cro-form').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
