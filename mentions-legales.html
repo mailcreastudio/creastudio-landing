@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <link rel="icon" href="logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Légales | Créastudio</title>
+    <meta name="description" content="Mentions légales de Créastudio, studio d'ingénierie publicitaire et Creative Strategy Meta Ads.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Montserrat & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0A0A0A',
+                        darkCard: '#121212',
+                        darkBorder: '#222222',
+                        accentOrange: '#ff6100',
+                        accentRed: '#c60909',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark text-gray-100 font-sans antialiased selection:bg-accentOrange selection:text-white">
+
+    <!-- 1. Header Sticky Minimaliste -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-md border-b border-darkBorder transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3.5 group">
+                <img src="logo.png" alt="Créastudio Logo" class="h-14 w-auto object-contain group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/60x60/ff6100/ffffff?text=C'">
+                <span class="font-montserrat font-extrabold text-2xl tracking-tight text-white">CRÉASTUDIO<span class="text-accentOrange">.</span></span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="index.html#Notre vision" class="hover:text-accentOrange transition-colors">Notre vision</a>
+                <a href="index.html#methodologie" class="hover:text-accentOrange transition-colors">Méthode</a>
+                <a href="index.html#cas" class="hover:text-accentOrange transition-colors">Résultats</a>
+                <a href="index.html#tarifs" class="hover:text-accentOrange transition-colors">Tarifs</a>
+                <a href="blog/index.html" class="hover:text-accentOrange transition-colors flex items-center gap-1.5 text-accentOrange font-semibold"><i class="fa-solid fa-pen-nib text-xs"></i> Blog</a>
+                <a href="index.html#faq" class="hover:text-accentOrange transition-colors">FAQ</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="index.html#contact" class="hidden sm:inline-flex items-center justify-center px-6 py-3 rounded-full bg-accentRed hover:bg-red-700 text-white font-bold text-sm tracking-wide transition-all shadow-lg hover:shadow-red-900/50 transform hover:-translate-y-0.5">
+                    Réserver un Audit
+                </a>
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none text-2xl p-2">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-darkCard border-b border-darkBorder px-6 py-6 space-y-4">
+            <a href="index.html#Notre vision" class="block text-gray-300 hover:text-accentOrange font-medium">Notre vision</a>
+            <a href="index.html#methodologie" class="block text-gray-300 hover:text-accentOrange font-medium">Méthode</a>
+            <a href="index.html#cas" class="block text-gray-300 hover:text-accentOrange font-medium">Résultats</a>
+            <a href="index.html#tarifs" class="block text-gray-300 hover:text-accentOrange font-medium">Tarifs</a>
+            <a href="blog/index.html" class="block text-accentOrange font-semibold flex items-center gap-2"><i class="fa-solid fa-pen-nib"></i> Blog</a>
+            <a href="index.html#faq" class="block text-gray-300 hover:text-accentOrange font-medium">FAQ</a>
+            <a href="index.html#contact" class="block text-center w-full py-3 rounded-full bg-accentRed text-white font-bold">Réserver un Audit</a>
+        </div>
+    </header>
+
+    <!-- Contenu Mentions Légales -->
+    <main class="pt-36 pb-24">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="mb-12">
+                <span class="text-accentOrange font-semibold text-sm uppercase tracking-widest block mb-3">Informations Légales</span>
+                <h1 class="font-montserrat font-black text-3xl sm:text-5xl text-white tracking-tight">Mentions Légales</h1>
+            </div>
+
+            <div class="space-y-8 text-gray-300 text-sm sm:text-base font-light leading-relaxed">
+                <section class="bg-darkCard border border-darkBorder p-6 sm:p-8 rounded-3xl space-y-3">
+                    <h2 class="font-montserrat font-bold text-xl text-white">1. Éditeur du site</h2>
+                    <p>Le site <strong class="text-white font-semibold">Créastudio</strong> est édité par :</p>
+                    <ul class="space-y-1.5 pt-1">
+                        <li><strong class="text-white font-medium">Nom commercial :</strong> Créastudio</li>
+                        <li><strong class="text-white font-medium">Statut / Dirigeant :</strong> Sautron Jérémy — Entrepreneur individuel</li>
+                        <li><strong class="text-white font-medium">Numéro SIRET :</strong> 52359284800023</li>
+                        <li><strong class="text-white font-medium">Adresse professionnelle :</strong> 26 Chemin des Thenauderies, 17610 Chaniers</li>
+                        <li><strong class="text-white font-medium">E-mail :</strong> <a href="mailto:mail.creastudio@gmail.com" class="text-accentOrange hover:underline">mail.creastudio@gmail.com</a></li>
+                        <li><strong class="text-white font-medium">Téléphone :</strong> 06.67.57.83.64</li>
+                        <li><strong class="text-white font-medium">Directeur de la publication :</strong> Sautron Jérémy</li>
+                    </ul>
+                </section>
+
+                <section class="bg-darkCard border border-darkBorder p-6 sm:p-8 rounded-3xl space-y-3">
+                    <h2 class="font-montserrat font-bold text-xl text-white">2. Hébergement</h2>
+                    <p>Le site est hébergé par <strong class="text-white font-semibold">Vercel Inc.</strong>, 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis (<a href="https://vercel.com" target="_blank" rel="noopener noreferrer" class="text-accentOrange hover:underline">https://vercel.com</a>).</p>
+                </section>
+
+                <section class="bg-darkCard border border-darkBorder p-6 sm:p-8 rounded-3xl space-y-3">
+                    <h2 class="font-montserrat font-bold text-xl text-white">3. Propriété intellectuelle</h2>
+                    <p>Tous les contenus présents sur ce site (textes, identité visuelle, mise en page, code, visuels de présentation) sont protégés par le droit d'auteur et la propriété intellectuelle. Toute reproduction ou utilisation non autorisée est interdite.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-darkBorder pt-20 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 pb-16 border-b border-darkBorder">
+                <!-- Colonne 1 : Logo & Présentation -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3.5">
+                        <img src="logo.png" alt="Créastudio Logo" class="h-10 w-auto object-contain" onerror="this.src='https://placehold.co/40x40/ff6100/ffffff?text=C'">
+                        <span class="font-montserrat font-extrabold text-xl tracking-tight text-white">CRÉASTUDIO<span class="text-accentOrange">.</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm font-light max-w-sm leading-relaxed">
+                        Studio d'ingénierie publicitaire et de Creative Strategy ultra-spécialisé dans la conception de visuels Meta Ads à haute performance pour la génération de prospects.
+                    </p>
+                    <div class="pt-2 flex items-center gap-4">
+                        <!-- Mail -->
+                        <a href="mailto:mail.creastudio@gmail.com" title="Envoyer un email" class="w-10 h-10 rounded-full bg-darkCard border border-darkBorder flex items-center justify-center text-gray-300 hover:text-accentOrange hover:border-accentOrange transition-colors">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <!-- LinkedIn Jérémy Sautron -->
+                        <a href="https://www.linkedin.com/in/j%C3%A9r%C3%A9my-sautron-3428b4269/" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="w-10 h-10 rounded-full bg-darkCard border border-darkBorder flex items-center justify-center text-gray-300 hover:text-accentOrange hover:border-accentOrange transition-colors">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/profile.php?id=61560014023079" target="_blank" rel="noopener noreferrer" title="Facebook" class="w-10 h-10 rounded-full bg-darkCard border border-darkBorder flex items-center justify-center text-gray-300 hover:text-accentOrange hover:border-accentOrange transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="font-montserrat font-bold text-white text-sm uppercase tracking-wider">Navigation</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400 font-light">
+                        <li><a href="index.html#Notre vision" class="hover:text-accentOrange transition-colors">Notre vision</a></li>
+                        <li><a href="index.html#methodologie" class="hover:text-accentOrange transition-colors">Méthode</a></li>
+                        <li><a href="index.html#cas" class="hover:text-accentOrange transition-colors">Résultats</a></li>
+                        <li><a href="index.html#tarifs" class="hover:text-accentOrange transition-colors">Tarifs</a></li>
+                        <li><a href="blog/index.html" class="hover:text-accentOrange transition-colors">Blog SEO</a></li>
+                        <li><a href="index.html#faq" class="hover:text-accentOrange transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="font-montserrat font-bold text-white text-sm uppercase tracking-wider">Informations</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400 font-light">
+                        <li><a href="index.html#contact" class="hover:text-accentOrange transition-colors font-medium text-white">Réserver un Audit</a></li>
+                        <li><a href="mailto:mail.creastudio@gmail.com" class="hover:text-accentOrange transition-colors">mail.creastudio@gmail.com</a></li>
+                        <li><a href="mentions-legales.html" class="text-accentOrange font-medium">Mentions Légales</a></li>
+                        <li><a href="confidentialite.html" class="hover:text-accentOrange transition-colors">Politique de Confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 font-light">
+                <p>&copy; 2026 Créastudio. Tous droits réservés.</p> 
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
