@@ -505,9 +505,9 @@
                 </div>
 
                 <form id="cro-form" onsubmit="handleAjaxSubmit(event)" class="space-y-6">
-                    <input type="hidden" name="_subject" value="Nouvelle demande de prospect - Créastudio">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="access_key" value="77eada0c-db8e-4074-ad36-e3219cd6790e">
+<input type="hidden" name="subject" value="Nouvelle demande de prospect - Créastudio">
+<input type="hidden" name="from_name" value="Site Créastudio">
 
                     <div class="grid sm:grid-cols-2 gap-6">
                         <div>
@@ -696,35 +696,33 @@
             event.preventDefault();
             const form = document.getElementById('cro-form');
             const submitBtn = document.getElementById('submit-btn');
-            
-            // Conversion directe des champs du formulaire en objet JSON pur (beaucoup plus rapide)
             const formData = new FormData(form);
             const dataObject = Object.fromEntries(formData.entries());
 
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Envoi en cours...';
 
-            fetch("https://formsubmit.co/ajax/mail.creastudio@gmail.com", {
+            fetch("https://api.web3forms.com/submit", {
                 method: "POST",
-                headers: { 
+                headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify(dataObject)
             })
-            .then(response => {
-                if (!response.ok) throw new Error('Erreur réseau');
-                return response.json();
-            })
-            .then(data => {
+            .then(async response => {
+                const data = await response.json();
+                if (!response.ok || !data.success) {
+                    throw new Error(data.message || "Erreur d'envoi");
+                }
                 form.classList.add('hidden');
                 document.getElementById('success-message').classList.remove('hidden');
                 form.reset();
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = 'Envoyer ma demande <i class="fa-solid fa-arrow-right ml-2"></i>';
             })
-            .catch(error => {
-                alert("Une erreur est survenue lors de l'envoi. Veuillez réessayer ou nous écrire directement à mail.creastudio@gmail.com.");
+            .catch(() => {
+                alert("Une erreur est survenue lors de l'envoi. Veuillez réessayer ou écrire à mail.creastudio@gmail.com.");
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = 'Envoyer ma demande <i class="fa-solid fa-arrow-right ml-2"></i>';
             });
